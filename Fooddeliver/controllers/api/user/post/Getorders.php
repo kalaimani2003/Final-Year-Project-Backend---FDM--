@@ -28,7 +28,7 @@ if (empty($user)) {
 }
 
 // Fetch orders for the given username
-$sql = "SELECT id, date, orderNames, totalAmount, status FROM placeorder WHERE username = ?";
+$sql = "SELECT id, date, orderNames, totalAmount, status,orderQuantities FROM placeorder WHERE username = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("s", $user);
 $stmt->execute();
